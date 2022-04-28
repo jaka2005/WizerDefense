@@ -81,12 +81,12 @@ class MainMenuScene : Scene() {
 
     override suspend fun Container.sceneMain() {
         wizerRect.addUpdater {
-            wizer1.visible = !mouse.isOver and !collidesWith(cursorBG)
-            wizer2.visible = mouse.isOver or collidesWith(cursorBG)
+            wizer1.visible = !mouse.isOver
+            wizer2.visible = mouse.isOver
         }
         bulletRect.addUpdater {
-            bullet1.visible = !mouse.isOver and !collidesWith(cursorBG)
-            bullet2.visible = mouse.isOver or collidesWith(cursorBG)
+            bullet1.visible = !mouse.isOver
+            bullet2.visible = mouse.isOver
         }
 
         var cursorToPoint = randomPoint()
