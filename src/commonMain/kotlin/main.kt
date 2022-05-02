@@ -14,5 +14,6 @@ object ConfigModule : Module() {
     override val mainScene = MainMenuScene::class
     override suspend fun AsyncInjector.configure() {
         mapPrototype { MainMenuScene() }
+        mapPrototype { GameScene() }
     }
 }

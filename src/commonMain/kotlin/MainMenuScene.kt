@@ -68,13 +68,14 @@ class MainMenuScene : Scene() {
         }
 
         cursorBG = backgroundLayer.image(cursorImage) {
+            scale = 25 / width
             position(randomPoint())
         }
 
         val startButton = uiLayer.roundRect(200, 50, 7, fill = Colors.DARKGREY) {
             alpha = .5
             position((screenWidth - width) / 2 , (screenHeight - height) / 2 - 100)
-            onClick { println("start") }
+            onClick { sceneContainer.changeTo<GameScene>() }
         }
         uiLayer.text("Начать игру").centerOn(startButton)
     }
@@ -98,6 +99,10 @@ class MainMenuScene : Scene() {
             )
             cursorToPoint = randomPoint()
         }
+    }
+
+    override suspend fun sceneAfterDestroy() {
+        println(this)
     }
 }
 
