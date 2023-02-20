@@ -17,7 +17,7 @@ buildscript {
 apply<KorgeGradlePlugin>()
 
 korge {
-	id = "com.j2k.WizerDefense"
+	id = "site.j2k.WizerDefense"
 // To enable all targets at once
 
 	//targetAll()
